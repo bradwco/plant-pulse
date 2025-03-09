@@ -191,19 +191,22 @@ body {
 article {
     width: 80%;
     max-width: 800px;
-    margin: 10px 0;
+    margin: 20px 0;
     background-color: #1E1E1E;
     border: 3px solid #3C3737; 
-    padding: 20px;
+    padding: 20px 0 35px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-left:20%;
+    margin-left:10%;
 }
 
+article:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
 /* Hide radio buttons visually but keep them functional */
-input[type="radio"] {
+input[type="checkbox"] {
     appearance: none;
     position: fixed;
     top: -100vh;
@@ -219,7 +222,7 @@ input[type="radio"] {
 }
 
 /* When a radio button is checked, show the corresponding content */
-input[type="radio"]:checked ~ div.accordion-content {
+input[type="checkbox"]:checked ~ div.accordion-content {
     max-height: 500px; /* Adjust this to the desired content height */
     padding: 20px; /* Padding to add space inside the expanded content */
 }
@@ -252,7 +255,7 @@ label h2 {
 
 /* Text Styling */
 p {
-    color: white;
+    color: rgb(238, 234, 234);
     font-size: 16px;
     line-height: 1.5;
     font-family: 'Inter', sans-serif;
@@ -280,3 +283,36 @@ p {
 #articles-container {
     margin-top: 10vh;
 }
+
+.progress-container {
+    width: 70%; /* Adjust width percentage as needed (e.g., 80% makes it longer) */
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 7%; 
+    margin-top: 3.5%;
+    cursor: pointer;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(to right, #286c4e, #215941);
+    transition: width 0.5s ease-in-out;
+}
+.bold {
+    font-weight: 800;
+    color: white;
+}
+
+label {
+    display: flex;
+    justify-content: space-between; /* Space out the elements */
+    align-items: center; /* Vertically align them in the center */
+    width: 100%; /* Ensure they take up the full width of the parent */
+    cursor: pointer;
+}
+

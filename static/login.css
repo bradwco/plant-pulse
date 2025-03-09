@@ -1,5 +1,5 @@
 body {
-  background-color: #2D5957;
+  background-color: #2d5957;
   overflow: hidden;
   font-family: "Inter", sans-serif;
   font-weight: 300;
@@ -27,6 +27,7 @@ body {
   left: 58%;
   width: 500px;
   height: 650px;
+  transition: transform 0.5s ease;
 }
 
 .title-text {
@@ -70,7 +71,7 @@ p {
 }
 
 .sign-in-button {
-  background-color: #58B484;
+  background-color: #58b484;
   color: white;
   padding: 12px;
   border-radius: 8px;
@@ -104,7 +105,32 @@ h3 {
   margin-bottom: 16px;
 }
 
+.sign-in-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
 .google-sign-in-button {
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 29px;
+  margin-right: 16px;
+}
+
+.github-sign-in-button {
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 22px;
+  margin-right: 16px;
+}
+
+.facebook-sign-in-button {
   height: 55px;
   width: 55px;
   cursor: pointer;
@@ -125,8 +151,6 @@ h3 {
   color: white;
   text-decoration: underline;
 }
-
-
 
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
@@ -165,4 +189,24 @@ h3 {
   .create-account-link {
     font-size: 16px;
   }
+}
+
+/* Define the move-up animation */
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px); /* Moves the element up */
+  }
+}
+
+/* Add move-up class to trigger the animation */
+.move-up {
+  animation: moveUp 0.5s forwards; /* 0.5s is the duration of the animation */
+}
+
+/* Add move-down class to reverse the animation */
+.move-down {
+  animation: moveUp 0.5s reverse forwards;
 }

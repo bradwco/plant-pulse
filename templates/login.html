@@ -22,10 +22,14 @@
       <input id = "loginPass" type="password" class="input-box" placeholder="skibiditoilet123" required/>
       <a class="forgot-password-link">Forgot Password</a>
       <button id = "loginSubmit" type="submit" class="sign-in-button">Sign in</button>
-      <img id="googleSignIn"src="../static/images/google icon.png" class="google-sign-in-button"/>
+      <div class="sign-in-icons">
+        <img id="googleLogIn" src="../static/images/google icon.png" class="google-sign-in-button"/>
+        <img id="githubLogIn" src="../static/images/github icon.png" class="github-sign-in-button"/>
+        <img id="facebookLogIn" src="../static/images/facebook icon.png" class="facebook-sign-in-button"/>
+      </div>
       <a id="createAccount" class="create-account-link" style="color: white" href="signup.html">Create an account</a>
     </div>
-    <img class="green-rectangle" src="../static/images/green-rectangle.png">
+    <img id="green-rectangle" class="green-rectangle" data-target="main-rectangle" src="../static/images/green-rectangle.png">
     <script src="{{ url_for('static', filename='bundle.js') }}"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </main>

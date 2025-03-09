@@ -21,10 +21,14 @@
       <p>Choose a password</p>
       <input id = "signupPass" type="password" placeholder="***********" class="input-box" required/>
       <button id = "signupSubmit" type="submit" class="sign-up-button">Sign Up</button>
-      <img id="googleSignIn"src="../static/images/google icon.png" class="google-sign-in-button"/>
+      <div class="sign-in-icons">
+        <img id="googleSignUp" src="../static/images/google icon.png" class="google-sign-in-button"/>
+        <img id="githubSignUp" src="../static/images/github icon.png" class="github-sign-in-button"/>
+        <img id="facebookSignUp" src="../static/images/facebook icon.png" class="facebook-sign-in-button"/>
+      </div>
       <a id="loginLink" class="existing-account-link" href="login.html" style="color: white">Log into existing account</a>
     </div>
-    <img class="green-rectangle" src="../static/images/green-rectangle.png">
+    <img id="green-rectangle" class="green-rectangle" src="../static/images/green-rectangle.png">
     <script src="{{ url_for('static', filename='bundle.js') }}"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </main>

@@ -104,7 +104,32 @@ h3 {
   margin-bottom: 16px;
 }
 
+.sign-in-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
 .google-sign-in-button {
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 29px;
+  margin-right: 16px;
+}
+
+.github-sign-in-button {
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 22px;
+  margin-right: 16px;
+}
+
+.facebook-sign-in-button {
   height: 55px;
   width: 55px;
   cursor: pointer;
