@@ -108,15 +108,21 @@ const loginEmailPassword = async () => {
     const user = userCredential.user;
 
     if (!user.emailVerified) {
-      alert("Please verify your email before logging in.");
+      
       await signOut(auth);
       return;
-    } else {
-      console.log("User logged in:", user);
-    }
+    } 
+
+    console.log("User logged in:", user);
   } catch (error) {
-    console.error("Error logging in:", error.message);
-    // alert("Login Error: " + error.message);
+    if (error.code === "auth/user-not-found") {
+        alert("No user found with this email.");
+      } else if (error.code === "auth/wrong-password") {
+        alert("Incorrect password. Please try again.");
+      } else {
+        console.error("Error logging in:", error.message);
+        alert("Login Error: " + error.message);
+      }
   }
 };
 
@@ -132,15 +138,12 @@ const createAccount = async () => {
     console.log("User Created:", userCredential.user);
 
     await sendEmailVerification(userCredential.user);
-    alert(
-      "Verification email sent! Please check your inbox before logging in."
-    );
+    alert("Verification email sent! Please check your inbox before logging in.");
     await signOut(auth);
     window.location.replace("/login");
-    alert("Please verify your email");
-    console.log("User Created (Verification Pending):", user);
   } catch (error) {
     console.error("Error Creating User:", error.message);
+    alert("Error Creating User: " + error.message);
   }
 };
 
@@ -160,6 +163,7 @@ const monitorAuthState = () => {
       console.log("User is logged in:", user);
 
       if (!user.emailVerified) {
+        alert("Please verify your email before logging in.");
         signOut(auth);
         window.location.replace("/login");
         return;
